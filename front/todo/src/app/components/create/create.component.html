@@ -1,0 +1,36 @@
+<form>
+    <div class="formulario">
+
+        <h1>Criando Novo To-Do</h1>
+
+        <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Data para finalizar</mat-label>
+                <input [(ngModel)]="todo.dataParaFinalizar" name="todo.dataParaFinalizar" matInput [matDatepicker]="dp3"
+                    disabled>
+                <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+            </mat-form-field >
+        </p>  
+
+        <div class="forms">
+            <div class="titulo">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Título</mat-label>
+                    <input [(ngModel)]="todo.titulo" name="todo.titulo" matInput placeholder="Ex. Estudar Spring">
+                </mat-form-field>
+            </div>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Descrição</mat-label>
+                <input [(ngModel)]="todo.descricao" name="todo.descricao" matInput placeholder="Ex. Estudar Spring">
+            </mat-form-field>
+        </div>
+
+        <div class="buttons">
+            <button (click)="this.create()" mat-stroked-button color="primary">CRIAR</button>
+            <button (click)="this.cancel()" mat-stroked-button color="warn">CANCELAR</button>
+
+        </div>
+    </div>
+
+</form>
